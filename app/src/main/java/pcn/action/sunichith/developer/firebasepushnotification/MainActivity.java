@@ -47,7 +47,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     String TAG="MainActivity";
-    Button sendNotification;
+      Button sendNotification,subscribe,unsubscribe;
     String token;
 
     UpdateApi updateApi;
@@ -77,6 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         sendNotification=findViewById(R.id.sendnotification_btn);
         sendNotification.setOnClickListener(this);
+         subscribe=findViewById(R.id.subscrribr);
+        unsubscribe=findViewById(R.id.Unsubscrribr);
+        subscribe.setOnClickListener(this);
+        unsubscribe.setOnClickListener(this);
 
         FirebaseMessaging.getInstance().setAutoInitEnabled(true);
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
